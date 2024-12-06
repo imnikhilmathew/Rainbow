@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainbow</title>
+    <link rel="stylesheet" href="./assets/css/custom-styles.css" />
+    <link rel="stylesheet" href="./assets/css/output.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link rel="stylesheet" href="./assets/css/scroll-styles.css" />
+    <link rel="stylesheet" href="./assets/css/toggleCards.css" />
+  </head>.
+  <body class="overflow-x-hidden">
+    <my-header></my-header>
+    <div class="page-title relative">
+      <img src="./assets/images/about-title.jpg" alt="" class="object-cover" />
+      <div
+        class="title absolute top-0 left-0 w-[100%] h-[100%] flex justify-center items-center flex-col"
+      >
+        <h2
+          class="text-2xl lg:text-7xl 2xl:text-8xl text-white font-medium lg:mb-2 2xl:mb-5 slide-right"
+        >
+          Properties
+        </h2>
+        <h3
+          class="text-xl lg:text-2xl 2xl:text-4xl playfair italic font-semibold text-white slide-left"
+        >
+          Home . Properties
+        </h3>
+      </div>
+    </div>
+    <!-- PROPERTY SECTION STARTS HERE -->
+    <div class="filter-bar flex justify-center p-5 shadow-lg mb-10">
+      <div
+        class="filter-container lg:w-full 2xl:w-[90%] text-black flex lg:justify-between 2xl:justify-between flex-col sm:flex-row"
+      >
+        <a href="#">
+          <div
+            class="button-filter font-bold p-5 flex justify-center items-center bg-[#FFF5E0] sm:w-fit rounded-lg h-12 my-2 sm:my-0 w-full"
+          >
+            Daily Rent
+          </div>
+        </a>
+        <a href="#">
+          <div
+            class="button-filter font-bold p-5 flex justify-center items-center bg-[#FFF5E0] sm:w-fit rounded-lg h-12 my-2 sm:my-0 w-full"
+          >
+            Monthly Rent
+          </div>
+        </a>
+        <input
+          type="text"
+          name="keyword"
+          id="keyword"
+          placeholder="Enter Keyword..."
+          class="p-4 border-2 border-[#E5E5EA] rounded-lg h-12 my-2 sm:my-0 w-full sm:w-fit"
+        />
+        <!-- <input
+          type="text"
+          name="keyword"
+          id="keyword"
+          placeholder="Drop down comes here"
+          class="p-4 border-2 border-[#E5E5EA] rounded-lg h-12 my-2 sm:my-0 w-full sm:w-fit"
+        />
+        <input
+          type="text"
+          name="keyword"
+          id="keyword"
+          placeholder="Dropn down comes here"
+          class="p-4 border-2 border-[#E5E5EA] rounded-lg h-12 my-2 sm:my-0 w-full sm:w-fit"
+        /> -->
+        <select id="cars" name="cars" class="p-2 border-2 border-[#E5E5EA] rounded-lg h-12 my-2 sm:my-0 w-full sm:w-fit">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+        <select id="cars" name="cars" class="p-2 border-2 border-[#E5E5EA] rounded-lg h-12 my-2 sm:my-0 w-full sm:w-fit">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+        <input
+          type="text"
+          name="keyword"
+          id="keyword"
+          placeholder="Address"
+          class="p-4 border-2 border-[#E5E5EA] rounded-lg h-12 my-2 sm:my-0 w-full sm:w-fit"
+        />
+        <a href="#">
+          <div
+            class="button-filter font-bold p-5 flex justify-center items-center bg-[#FFF5E0] sm:w-fit rounded-lg h-12 my-2 sm:my-0 w-full"
+          >
+            Filters
+          </div>
+        </a>
+        <a href="#">
+          <div
+            class="button-filter font-bold p-5 flex justify-center items-center bg-[#FFF5E0] sm:w-fit rounded-lg h-12 my-2 sm:my-0 w-full"
+          >
+            <i class="fa-solid fa-magnifying-glass bold pr-2"></i>
+            Search
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- PROPERT LISTING STARTS HERE -->
+
+    <div class="property-listing flex justify-center mb-20">
+      <div class="listing-container sm:w-[70%]">
+        <div
+          class="listing-heading flex justify-between items-center mb-10 flex-col sm:flex-row text-center sm:text-left"
+        >
+          <div class="lh-left">
+            <h2 class="text-black text-4xl font-bold mb-3">Property Listing</h2>
+            <p>There are currently 17 properties</p>
+          </div>
+          <div class="lh-right flex items-center mt-3 sm:mt-0">
+            <div
+              class="grid-button lh-button p-2 hidden sm:block border-2 border-[#E5E5EA] rounded-xl w-fit cursor-pointer"
+            >
+              <img src="./assets/icons/grid.png" alt="" />
+            </div>
+
+            <div
+              class="list-button lh-button hidden sm:block p-2 ml-5 border-2 border-[#E5E5EA] rounded-xl w-fit cursor-pointer"
+            >
+              <img src="./assets/icons/list.png" alt="" />
+            </div>
+
+            <div
+              class="lh-button px-5 sm:ml-5 py-3 border-2 border-[#E5E5EA] rounded-xl w-fit text-[#3A3A3C] cursor-pointer"
+            >
+              Default Filters
+            </div>
+          </div>
+        </div>
+        <div
+          class="listing-cards grid 2xl:grid-cols-3 lg:grid-cols-2 gap-5 mb-12 grid-cols-1 justify-center"
+        >
+          <!-- CARD -->
+          <a href="./property-details.html">
+            <div class="ppt-card property-card-grid">
+              <div class="listing-img w-fit relative">
+                <img src="./assets/images/property.jpg" class="ppt-img" alt="" />
+                <div
+                  class="dark-gradient bg-gradient-to-t from-black to-transparent absolute bottom-0 h-[50%] w-[100%] rounded-b-2xl"
+                >
+                  <div class="absolute bottom-0 left-0 p-5 cost-container ">
+                    <h2 class="text-white font-semibold text-2xl cost px-auto">$146,000</h2>
+                  </div>
+                </div>
+              </div>
+              <h2 class="text-2xl text-black font-bold mb-4">
+                195 Houston Avill
+              </h2>
+              <div class="flex items-center mb-4">
+                <img
+                  src="./assets/icons/map-pin-solid.png"
+                  alt=""
+                  class="pr-2 ppt-icon"
+                />
+                <p class="text-[#8E8E93]">Palarivattam, Kochi</p>
+              </div>
+              <div class="card-icons flex justify-between items-center w-max">
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/briefcase.png" alt="" class="pr-3 ppt-icon  " />
+                  <p class="font-semibold text-[#8C8C8C]">Rental</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/bed.png" alt="" class="pr-3 ppt-icon  " />
+                  <p class="font-semibold text-[#8C8C8C]">3 BHK</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/size.png" alt="" class="pr-3 ppt-icon  " />
+                  <p class="font-semibold text-[#8C8C8C]">Sizes 1,900</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- CARD -->
+          <a href="./property-details.html">
+            <div class="ppt-card property-card-grid">
+              <div class="listing-img w-fit relative mb-5">
+                <img src="./assets/images/property.jpg" class="ppt-img" alt="" />
+                <div
+                  class="dark-gradient bg-gradient-to-t from-black to-transparent absolute bottom-0 h-[50%] w-[100%] rounded-b-2xl"
+                >
+                  <div class="absolute bottom-0 left-0 p-5 cost-container">
+                    <h2 class="text-white font-semibold text-2xl cost">$146,000</h2>
+                  </div>
+                </div>
+              </div>
+              <h2 class="text-2xl text-black font-bold mb-4">
+                195 Houston Avill
+              </h2>
+              <div class="flex items-center mb-4">
+                <img
+                  src="./assets/icons/map-pin-solid.png"
+                  alt=""
+                  class="pr-2 ppt-icon"
+                />
+                <p class="text-[#8E8E93]">Palarivattam, Kochi</p>
+              </div>
+              <div class="card-icons flex justify-between items-center">
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/briefcase.png" alt="" class="pr-3 ppt-icon  " />
+                  <p class="font-semibold text-[#8C8C8C]">Rental</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/bed.png" alt="" class="pr-3 ppt-icon  " />
+                  <p class="font-semibold text-[#8C8C8C]">3 BHK</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/size.png" alt="" class="pr-3 ppt-icon  " />
+                  <p class="font-semibold text-[#8C8C8C]">Sizes 1,900</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- CARD -->
+          <a href="./property-details.html">
+            <div class="ppt-card property-card-grid">
+              <div class="listing-img w-fit relative mb-5">
+                <img src="./assets/images/property.jpg" class="ppt-img" alt="" />
+                <div
+                  class="dark-gradient bg-gradient-to-t from-black to-transparent absolute bottom-0 h-[50%] w-[100%] rounded-b-2xl"
+                >
+                  <div class="absolute bottom-0 left-0 p-5 cost-container">
+                    <h2 class="text-white font-semibold text-2xl cost">$146,000</h2>
+                  </div>
+                </div>
+              </div>
+              <h2 class="text-2xl text-black font-bold mb-4">
+                195 Houston Avill
+              </h2>
+              <div class="flex items-center mb-4">
+                <img
+                  src="./assets/icons/map-pin-solid.png"
+                  alt=""
+                  class="pr-2 ppt-icon"
+                />
+                <p class="text-[#8E8E93]">Palarivattam, Kochi</p>
+              </div>
+              <div class="card-icons flex justify-between items-center">
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/briefcase.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">Rental</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/bed.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">3 BHK</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/size.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">Sizes 1,900</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- CARD -->
+          <a href="./property-details.html">
+            <div class="ppt-card property-card-grid">
+              <div class="listing-img w-fit relative mb-5">
+                <img src="./assets/images/property.jpg" class="ppt-img" alt="" />
+                <div
+                  class="dark-gradient bg-gradient-to-t from-black to-transparent absolute bottom-0 h-[50%] w-[100%] rounded-b-2xl"
+                >
+                  <div class="absolute bottom-0 left-0 p-5 cost-container">
+                    <h2 class="text-white font-semibold text-2xl cost">$146,000</h2>
+                  </div>
+                </div>
+              </div>
+              <h2 class="text-2xl text-black font-bold mb-4">
+                195 Houston Avill
+              </h2>
+              <div class="flex items-center mb-4">
+                <img
+                  src="./assets/icons/map-pin-solid.png"
+                  alt=""
+                  class="pr-2 ppt-icon"
+                />
+                <p class="text-[#8E8E93]">Palarivattam, Kochi</p>
+              </div>
+              <div class="card-icons flex justify-between items-center">
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/briefcase.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">Rental</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/bed.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">3 BHK</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/size.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">Sizes 1,900</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- CARD -->
+          <a href="./property-details.html">
+            <div class="ppt-card property-card-grid">
+              <div class="listing-img w-fit relative mb-5">
+                <img src="./assets/images/property.jpg" class="ppt-img" alt="" />
+                <div
+                  class="dark-gradient bg-gradient-to-t from-black to-transparent absolute bottom-0 h-[50%] w-[100%] rounded-b-2xl"
+                >
+                  <div class="absolute bottom-0 left-0 p-5 cost-container">
+                    <h2 class="text-white font-semibold text-2xl cost">$146,000</h2>
+                  </div>
+                </div>
+              </div>
+              <h2 class="text-2xl text-black font-bold mb-4">
+                195 Houston Avill
+              </h2>
+              <div class="flex items-center mb-4">
+                <img
+                  src="./assets/icons/map-pin-solid.png"
+                  alt=""
+                  class="pr-2 ppt-icon"
+                />
+                <p class="text-[#8E8E93]">Palarivattam, Kochi</p>
+              </div>
+              <div class="card-icons flex justify-between items-center">
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/briefcase.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">Rental</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/bed.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">3 BHK</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/size.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">Sizes 1,900</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- CARD -->
+          <a href="./property-details.html">
+            <div class="ppt-card property-card-grid">
+              <div class="listing-img w-fit relative mb-5">
+                <img src="./assets/images/property.jpg" class="ppt-img" alt="" />
+                <div
+                  class="dark-gradient bg-gradient-to-t from-black to-transparent absolute bottom-0 h-[50%] w-[100%] rounded-b-2xl"
+                >
+                  <div class="absolute bottom-0 left-0 p-5 cost-container">
+                    <h2 class="text-white font-semibold text-2xl cost">$146,000</h2>
+                  </div>
+                </div>
+              </div>
+              <h2 class="text-2xl text-black font-bold mb-4">
+                195 Houston Avill
+              </h2>
+              <div class="flex items-center mb-4">
+                <img
+                  src="./assets/icons/map-pin-solid.png"
+                  alt=""
+                  class="pr-2 ppt-icon"
+                />
+                <p class="text-[#8E8E93]">Palarivattam, Kochi</p>
+              </div>
+              <div class="card-icons flex justify-between items-center">
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/briefcase.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">Rental</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/bed.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">3 BHK</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/size.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">Sizes 1,900</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- CARD -->
+          <a href="./property-details.html">
+            <div class="ppt-card property-card-grid">
+              <div class="listing-img w-fit relative mb-5">
+                <img src="./assets/images/property.jpg" class="ppt-img" alt="" />
+                <div
+                  class="dark-gradient bg-gradient-to-t from-black to-transparent absolute bottom-0 h-[50%] w-[100%] rounded-b-2xl"
+                >
+                  <div class="absolute bottom-0 left-0 p-5 cost-container">
+                    <h2 class="text-white font-semibold text-2xl cost">$146,000</h2>
+                  </div>
+                </div>
+              </div>
+              <h2 class="text-2xl text-black font-bold mb-4">
+                195 Houston Avill
+              </h2>
+              <div class="flex items-center mb-4">
+                <img
+                  src="./assets/icons/map-pin-solid.png"
+                  alt=""
+                  class="pr-2 ppt-icon"
+                />
+                <p class="text-[#8E8E93]">Palarivattam, Kochi</p>
+              </div>
+              <div class="card-icons flex justify-between items-center">
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/briefcase.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">Rental</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/bed.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">3 BHK</p>
+                </div>
+                <div class="ppt-icon flex items-center icon-3">
+                  <img src="./assets/icons/size.png" alt="" class="pr-3 ppt-icon " />
+                  <p class="font-semibold text-[#8C8C8C]">Sizes 1,900</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="navigation-buttons flex justify-center">
+          <div class="nv-buttons flex items-center justify-center">
+            <a href=""
+              ><div
+                class="lh-button px-4 py-2 border-2 border-[#E5E5EA] rounded-lg w-fit bg-[#FFA920]"
+              >
+                <p class="font-bold">1</p>
+              </div></a
+            >
+            <a href=""
+              ><div
+                class="lh-button px-4 py-2 border-2 border-[#E5E5EA] rounded-lg w-fit ml-5"
+              >
+                <p class="font-bold">2</p>
+              </div></a
+            >
+            <a href="" class="text-lg font-semibold ml-5">Next</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS STARTS HERE -->
+
+    <div
+      class="testimonials h-[auto] bg-[#E8E8E8] flex justify-center py-10 2xl:pb-28 sm:pt-0 lg:pb-14"
+    >
+      <div class="tes-container sm:w-[80%] w-[90%]">
+        <div class="top-section flex justify-between flex-col sm:flex-row">
+          <div class="left-text flex flex-col justify-end items-stretch">
+            <p
+              class="text-[#7e7e7e] font-semibold text-xs 2xl:text-base lg:text-sm  slide-left"
+            >
+              TESTIMONIALS
+            </p>
+            <h2
+              class="2xl:text-4xl lg:text-2xl sm:leading-normal text-xl font-bold mt-4 slide-left"
+            >
+              <span class="playfair italic">What Our Clients</span><br />Say
+              About Us
+            </h2>
+            <div class="pd-cont pl-[40px]">
+              <p
+                class="2xl:w-[600px] lg:w-[400px] 2xl:text-2xl leading-loose mt-4 text-sm  slide-left"
+              >
+                I cannot say enough great things about rainbow . Their team is
+                professional, knowledgeable, and truly cares about their
+                clients. They helped me find the perfect home for my family.
+              </p>
+              <div class="profile flex items-center mt-4">
+                <img
+                  src="./assets/images/testimonial-profile.jpg"
+                  class="rounded-full size-11 lg:w-10 2xl:w-auto sm:size-auto slide-right"
+                  alt="profile image"
+                />
+                <div class="profile-name ml-4">
+                  <h2
+                    class="font-semibold lg:text-base 2xl:text-[20px] slide-right delay-[300ms]"
+                  >
+                    Monica Regan
+                  </h2>
+                  <p
+                    class="text-[7e7e7e] lg:text-xs 2xl:text-base text-xs slide-right delay-[600ms]"
+                  >
+                    CLIENT OF AGENCY
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="right-image mx-auto pt-6 sm:pt-0 w-[100%] lg:w-[500px] 2xl:w-auto flex sm:block justify-center sm:justify-normal slide-right"
+          >
+            <img
+              src="./assets/images/testimonials.jpg"
+              class="object-scale-down sm:object-contain w-[90%] sm:w-auto float-right"
+              alt="testimonials"
+            />
+          </div>
+        </div>
+        <div
+          class="counter-container flex justify-evenly w-[100%] mt-10 sm:mt-20 sm:ml-[-5%] flex-col sm:flex-row"
+        >
+          <div class="counter text-center sm:flex-1 pb-7 slide-right">
+            <h2 class="ct-cont lg:text-6xl 2xl:text-[90px] text-6xl font-semibold ct">
+              <span class="ct-num" data-target="67">0</span>k
+            </h2>
+            <p
+              class="text-[#7e7e7e] font-semibold text-lg lg:text-sm 2xl:text-base sm:leading-normal"
+            >
+              Square Meters
+            </p>
+          </div>
+          <div class="counter text-center sm:flex-1 pb-7 slide-right">
+            <h2 class="ct-cont lg:text-6xl 2xl:text-[90px] text-6xl font-semibold ct">
+              <span class="ct-num" data-target="67">0</span>k
+            </h2>
+            <p
+              class="text-[#7e7e7e] font-semibold text-lg lg:text-sm 2xl:text-base sm:leading-normal"
+            >
+              Square Meters
+            </p>
+          </div>
+          <div class="counter text-center sm:flex-1 pb-7 slide-right">
+            <h2 class="ct-cont lg:text-6xl 2xl:text-[90px] text-6xl font-semibold ct">
+              <span class="ct-num" data-target="67">0</span>k
+            </h2>
+            <p
+              class="text-[#7e7e7e] font-semibold text-lg lg:text-sm 2xl:text-base sm:leading-normal"
+            >
+              Square Meters
+            </p>
+          </div>
+          <div class="counter text-center sm:flex-1 pb-7 slide-right">
+            <h2 class="ct-cont lg:text-6xl 2xl:text-[90px] text-6xl font-semibold ct">
+              <span class="ct-num" data-target="67">0</span>k
+            </h2>
+            <p
+              class="text-[#7e7e7e] font-semibold text-lg lg:text-sm 2xl:text-base sm:leading-normal"
+            >
+              Square Meters
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- TESTIMONIALS ENDS HERE -->
+
+    <my-footer></my-footer>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"
+    ></script>
+    <script src="./assets/js/carousel.js"></script>
+    <script src="./assets/js/scroll.js"></script>
+    <script src="./assets/js/headerFooterManager.js"></script>
+    <script src="./assets/js/counter.js"></script>
+    <script src="./assets/js/toggleGrid.js"></script>
+  </body>
+</html>

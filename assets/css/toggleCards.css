@@ -1,0 +1,58 @@
+.property-card-grid{
+    /* w-fit border-2 rounded-3xl border-[#EFEFEF] p-6 pb-10 */
+    width: fit-content;
+    border-width: 2px;
+    border-radius: 1.5rem;
+    border-color: #EFEFEF;
+    padding: 1.5rem;
+    padding-bottom: 2.5rem;
+    transition: border-color ease-in-out 0.5s;
+    
+}
+.property-card-flex{
+    /* w-fit border-2 rounded-3xl border-[#EFEFEF] p-6 pb-10 */
+    width: fit-content;
+    border-width: 2px;
+    border-radius: 1.5rem;
+    border-color: #EFEFEF;
+    padding: 1.5rem;
+    /* padding-bottom: 2.5rem; */
+    display: flex;
+    width: 100%;
+    /* background: red; */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+   transition: border-color ease-in-out 0.5s;
+}
+.ppt-card:hover{
+    border-color: gray;
+}
+.property-card-flex * {
+    padding: 0;
+    margin: 0;
+}
+.property-card-flex i {
+    padding-right: 1rem;
+}
+.property-card-flex  .ppt-icon {
+    margin-right: 0.5rem;
+}
+.ppt-img{
+    margin-bottom: 1.25rem;
+}
+.property-card-flex .ppt-img{
+    margin-bottom: 0;
+    height: 7rem;
+}
+.property-card-flex  .icon-3{
+    margin-left: 3rem;
+}
+.property-card-flex .cost-container  {
+    
+    width: 100%;
+    text-align: center;
+}
+
+/* ppt-img  mb-5 */
