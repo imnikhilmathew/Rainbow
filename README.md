@@ -169,14 +169,6 @@ Rainbow/
 
 ----------
 
-## 📞 Contact
-
-For any queries or feedback, please contact:
-
--   **Email**: [rainbow.support@example.com](mailto:rainbow.support@example.com)
--   **GitHub**: [username](https://github.com/username)
-
-----------
 
 ## 💡 Acknowledgments
 
